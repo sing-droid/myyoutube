@@ -1,11 +1,20 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleMenu } from './utils/appSlice';
+import { faBell, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Head = () => {
+  const dispatch = useDispatch();
+  const toggleMenuhandler = () => {
+dispatch(toggleMenu());
+  };
   return (
     <div className='grid grid-flow-col p-2 m-3 shadow-lg'>
         <div className='flex col-span-1 mx-2'>
             <img 
-            className='h-12 hover:bg-black-400 ml-3 mr-5'
+            onClick={() => toggleMenuhandler()}
+            className='h-12 hover:bg-black-400 ml-3 mr-5 cursor-pointer'
             src="https://cdn2.iconfinder.com/data/icons/most-useful-icons-4/50/HAMBURGER_MENU-512.png" 
             alt="Hamburger" />
 
@@ -23,10 +32,14 @@ const Head = () => {
         </div>
 
         <div className='col-span-1'>
-            <img 
-            className='h-9'
-            src="http://pluspng.com/img-png/png-user-icon-circled-user-icon-2240.png" 
-            alt="user-icon" />
+             <a href="#" className="mr-4">
+        <FontAwesomeIcon icon={faUser} className="sidebar-icon" />
+      </a>
+
+     <a href="#" className="ml-16 w-1/3 h-40">
+        <FontAwesomeIcon icon={faBell} className="sidebar-icon mr-8" />
+      </a>
+     
         </div>
     </div>
   )
