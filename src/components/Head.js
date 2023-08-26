@@ -19,7 +19,7 @@ const Head = () => {
           alt="Hamburger" />
 
         <img
-          className='h-12'
+          className='h-12 cursor-pointer'
           src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-2017-present.jpg"
           alt="youtube-logo" />
       </div>
