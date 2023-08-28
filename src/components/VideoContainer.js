@@ -7,22 +7,23 @@ const VideoContainer = () => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-      getVideos();
-    },[]);
+        getVideos();
+    }, []);
 
     const getVideos = async () => {
         const data = await fetch(YOUTUBE_VIDEOS_API);
         const json = await data.json();
+        console.log(json)
         setVideos(json.items);
     }
     return (
         <div className="flex flex-wrap cursor-pointer">
-           
-           {videos.map((video) => (
-            <Link to= {"/watch?v="+video.id}><VideoCard key={video.id} info={video} />
-            </Link>
-           ))}
-            
+
+            {videos.map((video) => (
+                <Link to={"/watch?v=" + video.id}><VideoCard key={video.id} info={video} />
+                </Link>
+            ))}
+
         </div>
     )
 }

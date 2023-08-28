@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleMenu } from './utils/appSlice';
 import { faBell, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { YOUTUBE_SEARCH_API } from './contants';
 
 const Head = () => {
+
+  const [searchQuery, setSearchQuery] = useState("");
+  useEffect(() => {
+    console.log(searchQuery);
+
+getSearchSuggestions();
+  },[searchQuery]);
+
+  const getSearchSuggestions = async () => {
+    const data = await fetch(YOUTUBE_SEARCH_API+searchQuery);
+    const json = await data.json();
+    console.log(json);
+  };
+
+
   const dispatch = useDispatch();
   const toggleMenuhandler = () => {
     dispatch(toggleMenu());
@@ -25,10 +41,25 @@ const Head = () => {
       </div>
 
       <div className='col-span-10 px-10'>
-        <input type="text" className='w-1/2 border border-gray-400 p-2 rounded-l-full' />
+        <div> 
+        <input type="text" 
+        className='w-1/2 border border-gray-400 p-2 rounded-l-full px-5' 
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <button className='border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100'>
           🔍
         </button>
+        </div>
+        <div className='fixed bg-white py-2 px-2 w-[23rem] rounded shadow-lg border border-gray-100'>
+          <ul>
+            <li className='py-2 px-2 shadow-sm hover:bg-gray-100'>🔍 Hello</li>
+            <li className='py-2 px-2 shadow-sm hover:bg-gray-100'>🔍 Hello India</li>
+            <li className='py-2 px-2 shadow-sm hover:bg-gray-100'>🔍 Hello world</li>
+            <li className='py-2 px-2 shadow-sm hover:bg-gray-100'>🔍 Hello in japanese</li>
+            <li className='py-2 px-2 shadow-sm hover:bg-gray-100'>🔍 Hello in chinese</li>
+          </ul>
+        </div>
       </div>
 
       <div className='col-span-1'>
