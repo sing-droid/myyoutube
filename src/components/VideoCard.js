@@ -9,7 +9,7 @@ const VidoeCard = ( {info} ) => {
             <ul>
             <li className="font-bold py-2">{title}</li>
                 <li>{channelTitle}</li>
-                <li>{statistics.viewCount} view</li>
+                <li>{statistics.viewCount}views</li>
                 <li>{publishedAt}</li>
             </ul>
         </div>
