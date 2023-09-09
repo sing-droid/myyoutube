@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBroadcastTower, faHome, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { fa2, faBroadcastTower, faClock, faFilm, faFootball, faGamepad, faHome, faMusic, faS, faSubscript, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -14,7 +14,7 @@ const Sidebar = () => {
         <ul>
           <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
             <Link to="/"> 
-            <a href="#" className="mr-4">
+            <a href="#" className="mr-3">
               <FontAwesomeIcon icon={faHome} className="sidebar-icon" />
             </a>
             Home
@@ -22,21 +22,21 @@ const Sidebar = () => {
           </li>
 
           <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
-            <a href="#" className="mr-4">
-              <FontAwesomeIcon icon={faVideo} className="sidebar-icon" />
+            <a href="#" className="mr-3">
+              <FontAwesomeIcon icon={faFilm} className="sidebar-icon" />
             </a>
             Shorts
           </li>
 
           <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
-            <a href="#" className="mr-4">
+            <a href="#" className="mr-3">
               <FontAwesomeIcon icon={faVideo} className="sidebar-icon" />
             </a>
             Videos
           </li>
 
           <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
-            <a href="#" className="mr-4">
+            <a href="#" className="mr-3">
               <FontAwesomeIcon icon={faBroadcastTower} className="sidebar-icon" />
             </a>
             Live
@@ -44,22 +44,83 @@ const Sidebar = () => {
 
         </ul>
       </div>
-      <h1 className='font-bold pt-5'>Subscriptions</h1>
+      <div> 
 
-      <ul>
-        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>Music</li>
-        <li>Sports</li>
-        <li>Gaming</li>
-        <li>Movies</li>
+        <h1 className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36 font-bold pt-3'>
+          <a href="#" className='mr-3'>
+            <FontAwesomeIcon icon={faHome} className='sidebar-icon'/>
+          </a>
+          Subscription
+        </h1>
+
+        <ul>
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+        <a href="#" className='mr-3'>
+          <FontAwesomeIcon icon={faMusic} className='side-bar'/>
+        </a>
+        Music
+        </li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+          <a href="#" className='mr-3'>
+            <FontAwesomeIcon icon={faFootball} className='side-bar'/>
+          </a>
+          Sports</li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+          <a href="#" className='mr-3'>
+            <FontAwesomeIcon icon={faGamepad} className='side-bar'/>
+          </a>
+          Gaming</li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+        <a href="#" className='mr-3'>
+
+          <FontAwesomeIcon icon={faFilm} className='side-bar'/>
+        </a>
+        Movies
+        </li>
+
       </ul>
 
-      <h1 className='font-bold pt-5'>Watch Later</h1>
-      <ul>
-        <li>Music</li>
-        <li>Sports</li>
-        <li>Gaming</li>
-        <li>Movies</li>
+      <h1 className='font-bold hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+        <a href="#" className='mr-3'>
+
+          <FontAwesomeIcon icon={faClock} className='side-bar'/>
+        </a>
+        
+        Watch Later</h1>
+        <ul>
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+        <a href="#" className='mr-3'>
+          <FontAwesomeIcon icon={faMusic} className='side-bar'/>
+        </a>
+        Music
+        </li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+          <a href="#" className='mr-3'>
+            <FontAwesomeIcon icon={faFootball} className='side-bar'/>
+          </a>
+          Sports</li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+          <a href="#" className='mr-3'>
+            <FontAwesomeIcon icon={faGamepad} className='side-bar'/>
+          </a>
+          Gaming</li>
+
+        <li className='hover:bg-gray-200 rounded-md  p-2 cursor-pointer w-36'>
+        <a href="#" className='mr-3'>
+
+          <FontAwesomeIcon icon={faFilm} className='side-bar'/>
+        </a>
+        Movies
+        </li>
+
       </ul>
+
+      </div>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import Button from "./Button";
 const ButtonList = () => {
 
     return(
-        <div className="flex">
+        <div className="flex bg-gray-100">
             <Button name= "All"/>
             <Button name="Gaming" />
             <Button name= "Songs"/>
@@ -17,16 +17,7 @@ const ButtonList = () => {
             <Button name= "Entertainment"/>
             <Button name= "watched"/>
 
-
-
-
-
-
-
-
-
-
-        </div>
+</div>
     )
 }
 
